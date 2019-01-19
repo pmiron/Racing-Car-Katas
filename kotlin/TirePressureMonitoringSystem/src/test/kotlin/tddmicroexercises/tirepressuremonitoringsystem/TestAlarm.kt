@@ -7,7 +7,8 @@ class TestAlarm {
 
     @Test
     fun foo() {
-        val alarm = Alarm()
+        val sensor = Sensor()
+        val alarm = Alarm(sensor)
         assertEquals(false, alarm.isAlarmOn)
     }
 }
