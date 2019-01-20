@@ -8,9 +8,13 @@ class Alarm(var sensor: Sensor) {
     fun check() {
         val psiPressureValue = sensor.popNextPressurePsiValue()
 
-        if (psiPressureValue < LowPressureThreshold || HighPressureThreshold < psiPressureValue) {
+        if (psiPressureOutOfRange(psiPressureValue)) {
             isAlarmOn = true
         }
+    }
+
+    fun psiPressureOutOfRange(psiPressureValue: Double): Boolean {
+        return psiPressureValue < LowPressureThreshold || psiPressureValue > HighPressureThreshold
     }
 
     companion object {
