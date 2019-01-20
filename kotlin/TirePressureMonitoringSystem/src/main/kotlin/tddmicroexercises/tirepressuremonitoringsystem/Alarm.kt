@@ -1,8 +1,6 @@
 package tddmicroexercises.tirepressuremonitoringsystem
 
 class Alarm(var sensor: Sensor) {
-    private val LowPressureThreshold = 17.0
-    private val HighPressureThreshold = 21.0
 
     var isAlarmOn = false
         internal set
@@ -13,5 +11,10 @@ class Alarm(var sensor: Sensor) {
         if (psiPressureValue < LowPressureThreshold || HighPressureThreshold < psiPressureValue) {
             isAlarmOn = true
         }
+    }
+
+    companion object {
+        val LowPressureThreshold = 17.0
+        val HighPressureThreshold = 21.0
     }
 }
