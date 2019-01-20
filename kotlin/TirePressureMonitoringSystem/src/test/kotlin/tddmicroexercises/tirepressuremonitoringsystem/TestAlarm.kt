@@ -1,13 +1,14 @@
 package tddmicroexercises.tirepressuremonitoringsystem
 
+import org.junit.Assert.assertEquals
 import org.junit.Test
-import org.junit.Assert.*
 
 class TestAlarm {
 
     @Test
     fun foo() {
-        val alarm = Alarm()
+        val sensor = RandomSensor()
+        val alarm = Alarm(sensor)
         assertEquals(false, alarm.isAlarmOn)
     }
 }
